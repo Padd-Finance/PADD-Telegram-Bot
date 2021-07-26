@@ -547,5 +547,5 @@ dispatcher.add_handler(conv_handler)
 updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=BOT_TOKEN)
-updater.bot.setWebhook('https://ancient-retreat-19421.herokuapp.com/' + BOT_TOKEN)
+updater.bot.setWebhook(os.environ["HEROKU_LINK"] + BOT_TOKEN)
 updater.idle()
